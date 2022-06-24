@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Layout, Button } from 'antd'
+import { web3Accounts, web3Enable, web3FromAddress, web3ListRpcProviders, web3UseRpcProvider } from '@polkadot/extension-dapp'
+import 'antd/dist/antd.css';
 import './App.css';
 
-import { web3Accounts, web3Enable, web3FromAddress, web3ListRpcProviders, web3UseRpcProvider } from '@polkadot/extension-dapp'
+const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
 
@@ -13,16 +15,21 @@ function App() {
 
     console.log('allAccounts => ', allAccounts)
     const injector = await web3FromAddress(allAccounts[0].address)
-
-
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={handleClickConnect}> Connect </button>
-      </header>
-    </div>
+    <Layout>
+      <Header>
+        <div style={{ display: 'flex', color: 'white', alignItems: 'center', justifyContent: "space-between" }}>
+          <div> LOGO </div>
+          <Button onClick={handleClickConnect}> Connect </Button>
+        </div>
+      </Header>
+      <Content style={{ padding: '0 50px', minHeight: 'calc(100vh - 150px)' }}>
+        This is content
+      </Content>
+      <Footer>Footer</Footer>
+    </Layout>
   );
 }
 
