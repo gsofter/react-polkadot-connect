@@ -1520,6 +1520,11 @@
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@noble/hashes/-/hashes-1.1.1.tgz#c056d9b7166c1e7387a7453c2aff199bf7d88e5f"
   integrity sha512-Lkp9+NijmV7eSVZqiUvt3UCuuHeJpUVmRrvh430gyJjJiuJMqkeHf6/A9lQ/smmbWV/0spDeJscscPzyB4waZg==
 
+"@noble/hashes@1.1.2":
+  version "1.1.2"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@noble/hashes/-/hashes-1.1.2.tgz#e9e035b9b166ca0af657a7848eb2718f0f22f183"
+  integrity sha512-KYRCASVTv6aeUi1tsF8/vpyR7zpfs3FUzy2Jqm+MU+LmUKhQ0y2FpfwqkCcxSg2ua4GALJd8k2R76WxwZGbQpA==
+
 "@noble/secp256k1@1.6.0":
   version "1.6.0"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@noble/secp256k1/-/secp256k1-1.6.0.tgz#602afbbfcfb7e169210469b697365ef740d7e930"
@@ -1655,6 +1660,15 @@
     "@polkadot/util" "9.5.1"
     "@polkadot/util-crypto" "9.5.1"
 
+"@polkadot/keyring@^9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/keyring/-/keyring-9.6.1.tgz#ec24f1dd41c4feee641152f220588a4d7136cc9a"
+  integrity sha512-BKItB142itho5Hxa8uE9e2AIkb2SJpOfsyu0usf/whby9i8IH5nRRYbNvWf/yl0aEJk7Ld1Vx8K4rjiTpHjZZg==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/util" "9.6.1"
+    "@polkadot/util-crypto" "9.6.1"
+
 "@polkadot/networks@9.5.1", "@polkadot/networks@^9.5.1":
   version "9.5.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/networks/-/networks-9.5.1.tgz#876c6cf8915a47e6ace81139197f8b0d36adb362"
@@ -1662,6 +1676,15 @@
   dependencies:
     "@babel/runtime" "^7.18.3"
     "@polkadot/util" "9.5.1"
+    "@substrate/ss58-registry" "^1.22.0"
+
+"@polkadot/networks@9.6.1", "@polkadot/networks@^9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/networks/-/networks-9.6.1.tgz#18b3c6270b9eaa1c957565a42ed2fe81e948f278"
+  integrity sha512-jCVTfAs3bppvkStVH9gw01oenT6loKRJSmSJ6g3JtQVsA8RdudZVQ3olCDy8iaXpEopJVDuFBQB5bArB9Hn1mA==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/util" "9.6.1"
     "@substrate/ss58-registry" "^1.22.0"
 
 "@polkadot/rpc-augment@8.9.1":
@@ -1767,6 +1790,31 @@
     "@polkadot/util-crypto" "^9.5.1"
     rxjs "^7.5.5"
 
+"@polkadot/ui-keyring@^2.6.1":
+  version "2.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/ui-keyring/-/ui-keyring-2.6.1.tgz#d4d34560b2a1f7c29882cbe6ac8d951e5257bd29"
+  integrity sha512-I/LdDHQeMxP1+V/IYcgTr5XomiTKMTapmW8bndXcDTqKFKhAtHOMvn7nhBXj6UQFLm3fMgK//doexFnSzi8irA==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/keyring" "^9.6.1"
+    "@polkadot/ui-settings" "2.6.1"
+    "@polkadot/util" "^9.6.1"
+    "@polkadot/util-crypto" "^9.6.1"
+    mkdirp "^1.0.4"
+    rxjs "^7.5.5"
+    store "^2.0.12"
+
+"@polkadot/ui-settings@2.6.1":
+  version "2.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/ui-settings/-/ui-settings-2.6.1.tgz#f7250401f2771a015f11e6387536fffb0b4fd60f"
+  integrity sha512-MCEhd409yW36Nt5wYcENC4FfxCS17W7qcUOCXFBuXpo71TAuj/09Ko1SvuA4sbDHBkHRUa8p+1YdAOp5kt3JwA==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/networks" "^9.6.1"
+    "@polkadot/util" "^9.6.1"
+    eventemitter3 "^4.0.7"
+    store "^2.0.12"
+
 "@polkadot/util-crypto@9.5.1", "@polkadot/util-crypto@^9.4.1", "@polkadot/util-crypto@^9.5.1":
   version "9.5.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/util-crypto/-/util-crypto-9.5.1.tgz#f69bdccd7043620c9bd905b169ec50bf97bf6ffb"
@@ -1780,6 +1828,23 @@
     "@polkadot/wasm-crypto" "^6.1.1"
     "@polkadot/x-bigint" "9.5.1"
     "@polkadot/x-randomvalues" "9.5.1"
+    "@scure/base" "1.1.1"
+    ed2curve "^0.3.0"
+    tweetnacl "^1.0.3"
+
+"@polkadot/util-crypto@9.6.1", "@polkadot/util-crypto@^9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/util-crypto/-/util-crypto-9.6.1.tgz#0c2a8f88a5b995937f01ebbeb7bb9dd4f54c263d"
+  integrity sha512-j9iCSPSuli520x/8F92uytc8rx3xH3deI6j8sQuvXZwla4mQQd6c0IkHccUgm+lPhASbXpQBLoZubEc2lPIOAA==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@noble/hashes" "1.1.2"
+    "@noble/secp256k1" "1.6.0"
+    "@polkadot/networks" "9.6.1"
+    "@polkadot/util" "9.6.1"
+    "@polkadot/wasm-crypto" "^6.1.5"
+    "@polkadot/x-bigint" "9.6.1"
+    "@polkadot/x-randomvalues" "9.6.1"
     "@scure/base" "1.1.1"
     ed2curve "^0.3.0"
     tweetnacl "^1.0.3"
@@ -1798,6 +1863,20 @@
     bn.js "^5.2.1"
     ip-regex "^4.3.0"
 
+"@polkadot/util@9.6.1", "@polkadot/util@^9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/util/-/util-9.6.1.tgz#ddf79746eb8df3b56eb2d1921b2fb1451d9fcef0"
+  integrity sha512-2lapwzBg+kzTMzETnat7wxWrNmJstui1C81EvDVhecDXLeB3TITrHJs9u/RKiCigQGNHTP3riBOPIeSx9Gqv0A==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/x-bigint" "9.6.1"
+    "@polkadot/x-global" "9.6.1"
+    "@polkadot/x-textdecoder" "9.6.1"
+    "@polkadot/x-textencoder" "9.6.1"
+    "@types/bn.js" "^5.1.0"
+    bn.js "^5.2.1"
+    ip-regex "^4.3.0"
+
 "@polkadot/wasm-bridge@6.1.1":
   version "6.1.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-bridge/-/wasm-bridge-6.1.1.tgz#9342f2b3c139df72fa45c8491b348f8ebbfa57fa"
@@ -1805,12 +1884,26 @@
   dependencies:
     "@babel/runtime" "^7.17.9"
 
+"@polkadot/wasm-bridge@6.1.5":
+  version "6.1.5"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-bridge/-/wasm-bridge-6.1.5.tgz#f77e3605eb30ac199a8d3a6357affb35f81f983a"
+  integrity sha512-nqxhJQTjw5P3yEY1Cd9g86GvpY/PHD3h74dszaBOg5GVPE53G18AKehb5I8daSpOHVKsItKK1n8xstxZTVI0Hg==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+
 "@polkadot/wasm-crypto-asmjs@6.1.1":
   version "6.1.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-crypto-asmjs/-/wasm-crypto-asmjs-6.1.1.tgz#6d09045679120b43fbfa435b29c3690d1f788ebb"
   integrity sha512-gG4FStVumkyRNH7WcTB+hn3EEwCssJhQyi4B1BOUt+eYYmw9xJdzIhqjzSd9b/yF2e5sRaAzfnMj2srGufsE6A==
   dependencies:
     "@babel/runtime" "^7.17.9"
+
+"@polkadot/wasm-crypto-asmjs@6.1.5":
+  version "6.1.5"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-crypto-asmjs/-/wasm-crypto-asmjs-6.1.5.tgz#2446159502fc3966cdcc4a9560494e037bdec3ab"
+  integrity sha512-GsVIe+fjJ2sHfrjtqSLV0tP6nClF/7/QXZd+BAWomVMCVcR35OIrkNK2giDzlCqaTP+MiCb/UF3phrU4wsHV4Q==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
 
 "@polkadot/wasm-crypto-init@6.1.1":
   version "6.1.1"
@@ -1822,6 +1915,16 @@
     "@polkadot/wasm-crypto-asmjs" "6.1.1"
     "@polkadot/wasm-crypto-wasm" "6.1.1"
 
+"@polkadot/wasm-crypto-init@6.1.5":
+  version "6.1.5"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-crypto-init/-/wasm-crypto-init-6.1.5.tgz#86756bc85bffced837778c2c2d35dab69adfb8f5"
+  integrity sha512-VkBNc4cEkQ9YWAKLGW2ve2HV56GBHii3Xy4QYV+8OFYiOUbBMDVmuAvjlCjxiwa8nUxLzgCIz0HqqUx2YzxkhQ==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/wasm-bridge" "6.1.5"
+    "@polkadot/wasm-crypto-asmjs" "6.1.5"
+    "@polkadot/wasm-crypto-wasm" "6.1.5"
+
 "@polkadot/wasm-crypto-wasm@6.1.1":
   version "6.1.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-crypto-wasm/-/wasm-crypto-wasm-6.1.1.tgz#3fdc8f1280710e4d68112544b2473e811c389a2a"
@@ -1829,6 +1932,14 @@
   dependencies:
     "@babel/runtime" "^7.17.9"
     "@polkadot/wasm-util" "6.1.1"
+
+"@polkadot/wasm-crypto-wasm@6.1.5":
+  version "6.1.5"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-crypto-wasm/-/wasm-crypto-wasm-6.1.5.tgz#1a694958b8aedf1908d0abf4d30a95e68219cef8"
+  integrity sha512-YKriV8xUnnNVCykB0c1r0JEQgGPmgPMsEfHLzKhUeE415vkj3UcfcgXuOXVSEXKqgeoCLkvlY5OL3yb3Fg+Xbw==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/wasm-util" "6.1.5"
 
 "@polkadot/wasm-crypto@^6.1.1":
   version "6.1.1"
@@ -1842,12 +1953,31 @@
     "@polkadot/wasm-crypto-wasm" "6.1.1"
     "@polkadot/wasm-util" "6.1.1"
 
+"@polkadot/wasm-crypto@^6.1.5":
+  version "6.1.5"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-crypto/-/wasm-crypto-6.1.5.tgz#a7f60ebf81297a460fa1e97f71c4db6c91d49639"
+  integrity sha512-P4MIVE0RJm+Ar0qbOFFtEvA9fkrcmu4KI929k/XiWOqqKuLogwNjZcZiWZYLG7pDIXeHciAy65nIUpV2nr0D+Q==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/wasm-bridge" "6.1.5"
+    "@polkadot/wasm-crypto-asmjs" "6.1.5"
+    "@polkadot/wasm-crypto-init" "6.1.5"
+    "@polkadot/wasm-crypto-wasm" "6.1.5"
+    "@polkadot/wasm-util" "6.1.5"
+
 "@polkadot/wasm-util@6.1.1":
   version "6.1.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-util/-/wasm-util-6.1.1.tgz#58a566aba68f90d2a701c78ad49a1a9521b17f5b"
   integrity sha512-DgpLoFXMT53UKcfZ8eT2GkJlJAOh89AWO+TP6a6qeZQpvXVe5f1yR45WQpkZlgZyUP+/19+kY56GK0pQxfslqg==
   dependencies:
     "@babel/runtime" "^7.17.9"
+
+"@polkadot/wasm-util@6.1.5":
+  version "6.1.5"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/wasm-util/-/wasm-util-6.1.5.tgz#4dcd4a32d706e18a40c2de65813abad1b4cbf730"
+  integrity sha512-5OH31mz8/Ly50fNOQ6eGFcO8OtLLyTvaoJPqUmcdl6OI+1+8GLoZMoXyRdrhWjftqQFxiJnwvlpqq6VdNVDg6g==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
 
 "@polkadot/x-bigint@9.5.1":
   version "9.5.1"
@@ -1856,6 +1986,14 @@
   dependencies:
     "@babel/runtime" "^7.18.3"
     "@polkadot/x-global" "9.5.1"
+
+"@polkadot/x-bigint@9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/x-bigint/-/x-bigint-9.6.1.tgz#46b4aae1909fdcd7434660067e07d3d8ec7e8349"
+  integrity sha512-m7n2/BR6wU30HPiwcaGEoDIgSMhGaBOQ2jPjnLnKCoJhFUvMrKCQELEnY68XJYsJXQuCtoOGE+kyh541sVkI5A==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/x-global" "9.6.1"
 
 "@polkadot/x-fetch@^9.5.1":
   version "9.5.1"
@@ -1874,6 +2012,13 @@
   dependencies:
     "@babel/runtime" "^7.18.3"
 
+"@polkadot/x-global@9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/x-global/-/x-global-9.6.1.tgz#cdd5acfc0ba9d84ba12d5d7ec00fef746b531a3d"
+  integrity sha512-qhBkJSg/kjBhOOIM4/gHcqojleFKBcTnMerCo/IUwT0b77queoNn1GTGoWrCialpzR7gxX7VW3OKVAzcTIsJRA==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+
 "@polkadot/x-randomvalues@9.5.1":
   version "9.5.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/x-randomvalues/-/x-randomvalues-9.5.1.tgz#e647554f7b34d4073e1bc60d8b81163d5f75f523"
@@ -1881,6 +2026,14 @@
   dependencies:
     "@babel/runtime" "^7.18.3"
     "@polkadot/x-global" "9.5.1"
+
+"@polkadot/x-randomvalues@9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/x-randomvalues/-/x-randomvalues-9.6.1.tgz#5ad5bc1b3f8bb8001296bbd0550db321a6220bc3"
+  integrity sha512-23NIFGEPec+MNCaRf0ZidItMr8WAIiDibeF5W8rj3HuWLma1SFw85OJdL6B9EbNF0h0gPCYuQR4tCuAfa0fO7A==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/x-global" "9.6.1"
 
 "@polkadot/x-textdecoder@9.5.1":
   version "9.5.1"
@@ -1890,6 +2043,14 @@
     "@babel/runtime" "^7.18.3"
     "@polkadot/x-global" "9.5.1"
 
+"@polkadot/x-textdecoder@9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/x-textdecoder/-/x-textdecoder-9.6.1.tgz#7c07313741959dc9138523c8cbf22432b2120bb0"
+  integrity sha512-9Xbc1umnvhxFEzUJfeEMSshl0ZB3sW+44ZL6Y5iH/ezan99O4g1B1YHTJp/6M4BUvdp0eNw5H1UAvn8i84lYog==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/x-global" "9.6.1"
+
 "@polkadot/x-textencoder@9.5.1":
   version "9.5.1"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/x-textencoder/-/x-textencoder-9.5.1.tgz#76d79d07bb81e9cc7eff97043eae82c39189d8d9"
@@ -1897,6 +2058,14 @@
   dependencies:
     "@babel/runtime" "^7.18.3"
     "@polkadot/x-global" "9.5.1"
+
+"@polkadot/x-textencoder@9.6.1":
+  version "9.6.1"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/@polkadot/x-textencoder/-/x-textencoder-9.6.1.tgz#55237e19d90772fcc6a6d8b4d0875780b812b71c"
+  integrity sha512-uExvrmt7DLu8Y4jHo0cKACqz8XHfbkBLihi4VBcMQ/T7xEB9k2nmVnT/H/6rzwQcaJSVy3zQsp/BRh+iE+XQlg==
+  dependencies:
+    "@babel/runtime" "^7.18.3"
+    "@polkadot/x-global" "9.6.1"
 
 "@polkadot/x-ws@^9.5.1":
   version "9.5.1"
@@ -6687,6 +6856,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
+mkdirp@^1.0.4:
+  version "1.0.4"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
+  integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
+
 mkdirp@~0.5.1:
   version "0.5.6"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/mkdirp/-/mkdirp-0.5.6.tgz#7def03d2432dcae4ba1d611445c48396062255f6"
@@ -8978,6 +9152,11 @@ statuses@2.0.1:
   version "1.5.0"
   resolved "https://ffn.jfrog.io/ffn/api/npm/npm/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
+
+store@^2.0.12:
+  version "2.0.12"
+  resolved "https://ffn.jfrog.io/ffn/api/npm/npm/store/-/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
+  integrity sha512-eO9xlzDpXLiMr9W1nQ3Nfp9EzZieIQc10zPPMP5jsVV7bLOziSFFBP0XoDXACEIFtdI+rIz0NwWVA/QVJ8zJtw==
 
 string-convert@^0.2.0:
   version "0.2.1"
