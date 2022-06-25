@@ -1,23 +1,35 @@
-import React from 'react'
-import { Layout, Button } from 'antd'
-import { web3Accounts, web3Enable, web3FromAddress, web3ListRpcProviders, web3UseRpcProvider } from '@polkadot/extension-dapp'
+import React from 'react';
+import { Layout, Button } from 'antd';
+import { useAccount } from '../hooks/useAccount';
 
-const { Header } = Layout
+const { Header } = Layout;
 
 const HeaderBar: React.FC = () => {
-    const handleClickConnect = async () => {
-        const allInjected = await web3Enable('my cool dapp')
-        const allAccounts = await web3Accounts();
-        console.log('allAccounts => ', allAccounts)
-        const injector = await web3FromAddress(allAccounts[0].address)
-    }
+  const { account, loadAccounts } = useAccount();
+  const handleClickConnect = () => {
+    loadAccounts();
+  };
 
-    return (<Header>
-        <div style={{ display: 'flex', color: 'white', alignItems: 'center', justifyContent: "space-between" }}>
-            <div> LOGO </div>
-            <Button type="primary" onClick={handleClickConnect}> Connect </Button>
-        </div>
-    </Header>)
-}
+  return (
+    <Header>
+      <div
+        style={{
+          display: 'flex',
+          color: 'white',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        }}>
+        <div> LOGO </div>
+        {account ? (
+          <> {account.address}</>
+        ) : (
+          <Button type="primary" onClick={handleClickConnect}>
+            Connect
+          </Button>
+        )}
+      </div>
+    </Header>
+  );
+};
 
-export default HeaderBar
+export default HeaderBar;

@@ -1,1 +1,1 @@
-export const APP_NAME = "My Polkadot Dapp";
+export const APP_NAME = 'My Polkadot Dapp';
