@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Input, Button } from 'antd';
-import { ApiPromise, WsProvider } from '@polkadot/api';
-import { AppContextProvider } from './hooks/useAccount';
+import { AppContextProvider, useAccount } from './hooks/useAccount';
 import HeaderBar from './components/Header';
 import 'antd/dist/antd.min.css';
 import './App.css';
@@ -9,24 +8,31 @@ import './App.css';
 const { Footer, Content } = Layout;
 
 const BalanceInfo: React.FC = () => {
-  const wsProvider = new WsProvider('wss://regnet-relay-rpc.parallel.fi');
-  const [api, setApi] = useState<ApiPromise | null>(null);
   const [genesisHash, setGenesisHash] = useState<string | null>(null);
+  const { api, account } = useAccount();
+  const [balance, setBalance] = useState(0);
+  useEffect(() => {
+    if (api) {
+      setGenesisHash(api.genesisHash.toHex());
+    }
+  }, [api]);
 
   useEffect(() => {
-    const createApiInstance = async () => {
-      const api = await ApiPromise.create({ provider: wsProvider });
-      setApi(api);
-      setGenesisHash(api.genesisHash.toHex());
-    };
+    if (account && api) {
+      api.query.system.account(account.address).then((res: any) => {
+        console.log('api.query.system.account => ', res.data.free);
+        console.log('api.query.system.account => ', res.data.free.toHuman());
+        setBalance(res.data.free);
+      });
+    }
 
-    createApiInstance();
-  });
+    // account.address
+  }, [account]);
 
   return (
     <div style={{ width: '300px' }}>
       Genesis Hash: {genesisHash} <br />
-      Balance Info:
+      {/* Balance Info: {balance} */}
     </div>
   );
 };
